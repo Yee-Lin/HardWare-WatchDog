@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script language=JavaScript type="text/JavaScript">
+        var upgradeProgress = 0;
+        var timeoutID;
+        function window_onload() {
+            document.getElementById("upgrade_progress").value = upgradeProgress;
+            if (upgradeProgress < 100) {
+                upgradeProgress += 1;
+                timeoutID = window.setTimeout(window_onload, 100);
+            }
+            else {
+                window.clearTimeout(timeoutID);
+                window.parent.location.href="index.htm";
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body onload="window_onload();">
+    <div class="button_bar">
+        <div class="upgrade_progress_notice">
+            <span> Upgrading... Please Wait. </span>
+        </div>
+        <div class="upgrade_progress_bar">
+            <progress id="upgrade_progress" max="100" value="0"></progress>
+        </div>
+    </div>
+</body>
+
+</html>

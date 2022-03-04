@@ -1,0 +1,15 @@
+home.png,
+index.htm,
+pix.png,
+style.css,
+action.js,
+parameters.htm,
+upgrade.htm,
+network.cgi,
+network.htm,
+parameters.cgi,
+upgrade.cgi,
+icon_home.png,
+upgrade_progress.htm,
+version.cgi 
+TO web.c RTE NOPRINT ROOT(Web)

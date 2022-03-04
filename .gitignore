@@ -1,0 +1,20 @@
+#LZY SMT32
+#Time：2022.3.4
+*.o
+*.hex
+*.bin
+*.dep
+*.crf
+*.d
+*.map
+*.sct
+*.log
+*.axf
+*.lst
+*.Bak
+*.s
+MDK-ARM/DeliveryRobotVCU/ExtDll.iex
+MDK-ARM/JLinkLog.txt
+MDK-ARM/DeliveryRobotVCU/DeliveryRobotVCU.build_log.htm
+MDK-ARM/DeliveryRobotVCU/DeliveryRobotVCU.htm
+MDK-ARM/DeliveryRobotVCU/DeliveryRobotVCU.lnp

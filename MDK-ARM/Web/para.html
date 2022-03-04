@@ -1,0 +1,145 @@
+<head>
+    <script language=JavaScript type="text/JavaScript" src="action.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<form action=parameters.cgi method=post name=cgi>
+<div>
+<table class="parameter_table">
+    <tr class="head">
+        <th class="item_param">Item</th>
+        <th class="data_param">Value</th>
+    </tr>
+    <tr>
+        <td>Front And Rear Impact Protection Enable</td>
+        <td>
+            <input type=hidden name=impact_e value="off" %s><input type=checkbox name=impact_e value="on" %s>
+        </td>
+    </tr>
+    <tr>
+        <td>Front And Rear Impact Protection Distance (mm)</td>
+        <td>
+            <input type=text name=impact_d value="%d" size=4 maxlength=4>
+        </td>
+    </tr>
+    <tr>
+        <td>Side Impact Protection Enable</td>
+        <td>
+            <input type=hidden name=impact_g value="off" %s><input type=checkbox name=impact_g value="on" %s>
+        </td>
+    </tr>
+    <tr>
+        <td>Side Impact Protection Distance (mm)</td>
+        <td>
+            <input type=text name=impact_f value="%d" size=4 maxlength=4>
+        </td>
+    </tr>
+    <tr>
+        <td>Threshold time of impact signal (ms)</td>
+        <td>
+            <input type=text name=impact_t value="%d" size=4 maxlength=4>
+        </td>
+    </tr>
+</table>
+
+<table class="parameter_table">
+    <tr class="head">
+        <th class="sensor_id">Sensor ID</th>
+        <th class="uart_channel">UART channel</th>
+        <th class="sensor_id">Sensor ID</th>
+        <th class="uart_channel">UART channel</th>
+    </tr>
+    <tr>
+        <td>Sensor 0</td>
+        <td>
+            <input type=text name=sensor_0 value="%d" size=1 maxlength=2>
+        </td>
+        <td>Sensor 1</td>
+        <td>
+            <input type=text name=sensor_1 value="%d" size=1 maxlength=2>
+        </td>
+    </tr>
+    <tr>
+        <td>Sensor 2</td>
+        <td>
+            <input type=text name=sensor_2 value="%d" size=1 maxlength=2>
+        </td>
+        <td>Sensor 3</td>
+        <td>
+            <input type=text name=sensor_3 value="%d" size=1 maxlength=2>
+        </td>
+    </tr>
+    <tr>
+        <td>Sensor 4</td>
+        <td>
+            <input type=text name=sensor_4 value="%d" size=1 maxlength=2>
+        </td>
+        <td>Sensor 5</td>
+        <td>
+            <input type=text name=sensor_5 value="%d" size=1 maxlength=2>
+        </td>
+    </tr>
+    <tr>
+        <td>Sensor 6</td>
+        <td>
+            <input type=text name=sensor_6 value="%d" size=1 maxlength=2>
+        </td>
+        <td>Sensor 7</td>
+        <td>
+            <input type=text name=sensor_7 value="%d" size=1 maxlength=2>
+        </td>
+    </tr>
+</table>
+
+<table class="parameter_table">
+    <tr class="head">
+        <th class="sensor_id">Release hub motors when stopping:</th>
+        <th class="uart_channel"></th>
+    </tr>
+    <tr>
+        <td>Don't release any motor</td>
+        <td>
+            <input type="radio" id="huey" name="release_motor" value="no" checked>
+        </td>
+    </tr>
+    <tr>
+        <td>Release rear hub motors</td>
+        <td>
+            <input type="radio" id="huey" name="release_motor" value="rear">
+        </td>
+    </tr>
+    <tr>
+        <td>Release front hub motors</td>
+        <td>
+            <input type="radio" id="huey" name="release_motor" value="front">
+        </td>
+    </tr>
+    <tr>
+        <td>Release all hub motors</td>
+        <td>
+            <input type="radio" id="huey" name="release_motor" value="all">
+        </td>
+    </tr>
+    <tr>
+        <td>Release front and rear motors alternately</td>
+        <td>
+            <input type="radio" id="huey" name="release_motor" value="alternate">
+        </td>
+    </tr>
+    <tr>
+        <td>How long after stopping to release the motor.</td>
+        <td>
+            <input type="text" name="release_motor" value="%d">
+        </td>
+    </tr>
+</table>
+
+</div>
+<div class="param_button">
+  <input class="param_confirm_button" type=button name=set value="OK" onclick="changeConfirm(this.form)">
+  <input class="param_reset_button" type=reset value="Reset">
+</div>
+</form>
+</body>
+</html>
