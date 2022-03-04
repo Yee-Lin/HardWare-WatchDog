@@ -49,48 +49,11 @@ Custom: C:\Keil_v5\ARM\Bin\FCARM.exe @.\Auto_FcArm_Cmd.inp
 FCARM FILE CONVERTER V2.58
 Completed 14 File(s), Ratio 87%
 compiling web.c...
-compiling stm32f4xx_hal_timebase_tim.c...
-compiling can.c...
-..\Src\can.c(24): warning:  #177-D: variable "appCan2MsgQueueId"  was declared but never referenced
-  static osMessageQueueId_t appCan2MsgQueueId;
-..\Src\can.c(25): warning:  #177-D: variable "appCan2SendQueueId"  was declared but never referenced
-  static osMessageQueueId_t appCan2SendQueueId;
-..\Src\can.c: 2 warnings, 0 errors
-compiling update_file_store.c...
-compiling app_main.c...
-..\Src\app_main.c(114): warning:  #550-D: variable "status"  was set but never used
-  	netStatus status;
-..\Src\app_main.c(36): warning:  #177-D: variable "UPDATE_FLAG"  was declared but never referenced
-  static const uint32_t UPDATE_FLAG = 0x55555555U;
-..\Src\app_main.c: 2 warnings, 0 errors
-compiling battery.c...
-..\Src\battery.c(4): warning:  #177-D: variable "HIGHEST_VOLTAGE"  was declared but never referenced
-  static const float HIGHEST_VOLTAGE = 58.8f;
-..\Src\battery.c(5): warning:  #177-D: variable "LOWEST_VOLTAGE"  was declared but never referenced
-  static const float LOWEST_VOLTAGE = 46.0f;
-..\Src\battery.c: 2 warnings, 0 errors
-compiling stm32f4xx_hal_msp.c...
-compiling flash.c...
-..\Src\flash.c(124): warning:  #177-D: function "EraseSectors"  was declared but never referenced
-  uint32_t EraseSectors(uint32_t sectorNo, uint32_t nbSectors)
-..\Src\flash.c: 1 warning, 0 errors
-compiling stm32f4xx_it.c...
-compiling main.c...
-compiling udp.c...
-compiling parameter_file_store.c...
-compiling w25qxx.c...
-..\Src\w25qxx.c(112): warning:  #177-D: function "WriteSR"  was declared but never referenced
-  void WriteSR(uint8_t status)
-..\Src\w25qxx.c(217): warning:  #177-D: function "DisableWrite"  was declared but never referenced
-  void DisableWrite(void)
-..\Src\w25qxx.c: 2 warnings, 0 errors
-compiling reset.c...
-compiling HTTP_Server_CGI.c...
 linking...
 Program Size: Code=53044 RO-data=28816 RW-data=101956 ZI-data=28132  
 FromELF: creating hex file...
 After Build - User command #1: C:\Keil_v5\\ARM\ARMCC\bin\fromelf.exe  --bin -o "c:\Users\Yee\OneDrive\Pix Project\Watchdog for Espana Planck\Redundant Watchdog\MDK-ARM\DeliveryRobotVCU\Redundant Watchdog.bin" ".\DeliveryRobotVCU\Redundant Watchdog.axf"
-".\DeliveryRobotVCU\Redundant Watchdog.axf" - 0 Error(s), 9 Warning(s).
+".\DeliveryRobotVCU\Redundant Watchdog.axf" - 0 Error(s), 0 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -195,45 +158,45 @@ Package Vendor: Keil
    * Component: ARM::CMSIS:CORE:5.5.0
 
    * Component: ARM::CMSIS:RTOS2:Keil RTX5:Library:5.5.3
-      Source file:   CMSIS\RTOS2\RTX\Template\Semaphore.c
-      Source file:   CMSIS\RTOS2\RTX\Template\Thread.c
-      Source file:   CMSIS\RTOS2\RTX\Template\Mutex.c
-      Source file:   CMSIS\RTOS2\RTX\Template\MemPool.c
-      Source file:   CMSIS\RTOS2\RTX\Template\Timer.c
-      Source file:   CMSIS\RTOS2\RTX\Source\rtx_lib.c
-      Source file:   CMSIS\RTOS2\RTX\Template\MsgQueue.c
-      Source file:   CMSIS\RTOS2\RTX\Template\svc_user.c
-      Library file:  CMSIS\RTOS2\RTX\Library\ARM\RTX_CM4F.lib
-      Include file:  CMSIS\RTOS2\RTX\Include\rtx_os.h
-      Source file:   CMSIS\RTOS2\RTX\Config\RTX_Config.c
       Source file:   CMSIS\RTOS2\RTX\Template\Events.c
-      Include file:  CMSIS\RTOS2\RTX\Config\RTX_Config.h
+      Library file:  CMSIS\RTOS2\RTX\Library\ARM\RTX_CM4F.lib
+      Source file:   CMSIS\RTOS2\RTX\Template\Thread.c
+      Source file:   CMSIS\RTOS2\RTX\Template\MsgQueue.c
       Source file:   CMSIS\RTOS2\RTX\Template\main.c
+      Source file:   CMSIS\RTOS2\RTX\Template\Semaphore.c
+      Source file:   CMSIS\RTOS2\RTX\Template\Timer.c
+      Source file:   CMSIS\RTOS2\RTX\Template\svc_user.c
+      Source file:   CMSIS\RTOS2\RTX\Template\MemPool.c
+      Include file:  CMSIS\RTOS2\RTX\Include\rtx_os.h
+      Source file:   CMSIS\RTOS2\RTX\Source\rtx_lib.c
+      Source file:   CMSIS\RTOS2\RTX\Config\RTX_Config.c
+      Include file:  CMSIS\RTOS2\RTX\Config\RTX_Config.h
+      Source file:   CMSIS\RTOS2\RTX\Template\Mutex.c
 
    * Component: Keil.ARM Compiler::Compiler:Event Recorder:DAP:1.4.0
-      Source file:   Source\EventRecorder.c
-      Include file:  Include\EventRecorder.h
       Include file:  Config\EventRecorderConf.h
+      Include file:  Include\EventRecorder.h
+      Source file:   Source\EventRecorder.c
 
    * Component: Keil.MDK-Plus::Network:CORE:IPv4 Release:7.15.0
+      Include file:  Network\Include\rl_net.h
       Source file:   Network\Config\Net_Config.c
       Library file:  Network\Lib\ARM\Net4_CM3_L.lib
-      Include file:  Network\Include\rl_net.h
 
    * Component: Keil.MDK-Plus::Network:Interface:ETH:7.15.0
       Include file:  Network\Config\Net_Config_ETH.h
 
    * Component: Keil.MDK-Plus::Network:Service:Web Server Compact:HTTP:7.15.0
-      Source file:   Network\Template\HTTP_Server_Access.c
       Source file:   Network\Template\HTTP_Server_Multiuser.c
       Source file:   Network\Template\HTTP_Server_CGI.c
       Source file:   Network\Template\HTTP_Server_Error.c
       Include file:  Network\Config\Net_Config_HTTP_Server.h
+      Source file:   Network\Template\HTTP_Server_Access.c
 
    * Component: Keil.MDK-Plus::Network:Socket:TCP:7.15.0
+      Source file:   Network\Template\TCP_Socket_Server.c
       Include file:  Network\Config\Net_Config_TCP.h
       Source file:   Network\Template\TCP_Socket_Client.c
-      Source file:   Network\Template\TCP_Socket_Server.c
 
    * Component: Keil.MDK-Plus::Network:Socket:UDP:7.15.0
       Include file:  Network\Config\Net_Config_UDP.h
@@ -246,9 +209,9 @@ Package Vendor: Keil
       Source file:   ETH\PHY_DP83848C.c
 
    * Component: Keil::Device:STM32Cube Framework:STM32CubeMX:1.1.0
-      Include file:  MX_Device.h
-      Source file:   STCubeGenerated\Src\stm32f4xx_hal_timebase_tim.c
       Source file:   STCubeGenerated\Src\stm32f4xx_hal_msp.c
+      Source file:   STCubeGenerated\Src\stm32f4xx_hal_timebase_tim.c
+      Include file:  MX_Device.h
       Include file:  STCubeGenerated\Inc\stm32f4xx_hal_conf.h
 
    * Component: Keil::Device:STM32Cube HAL:CAN:1.7.9
@@ -272,8 +235,8 @@ Package Vendor: Keil
       Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_eth.c
 
    * Component: Keil::Device:STM32Cube HAL:Flash:1.7.9
-      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_flash.c
       Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_flash_ex.c
+      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_flash.c
 
    * Component: Keil::Device:STM32Cube HAL:GPIO:1.7.9
       Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_gpio.c
@@ -320,12 +283,12 @@ Package Vendor: Keil
       Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_ll_utils.c
 
    * Component: Keil::Device:Startup:2.6.3
-      Include file:  Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h
       Source file:   MDK\Device\Source\ARM\STM32F40xxx_41xxx_OPT.s
       Source file:   MDK\Device\Source\ARM\STM32F4xx_OTP.s
+      Include file:  Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h
       Source file:   Drivers\CMSIS\Device\ST\STM32F4xx\Source\Templates\arm\startup_stm32f407xx.s
       Source file:   Drivers\CMSIS\Device\ST\STM32F4xx\Source\Templates\system_stm32f4xx.c
-Build Time Elapsed:  00:00:13
+Build Time Elapsed:  00:00:02
 </pre>
 </body>
 </html>
