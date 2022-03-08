@@ -21,8 +21,8 @@ Target DLL:      Segger\JL2CM3.dll V2.99.23.0
 Dialog DLL:      TCM.DLL V1.53.0.0
  
 <h2>Project:</h2>
-c:\Users\Yee\OneDrive\Pix Project\Watchdog for Espana Planck\Redundant Watchdog\MDK-ARM\DeliveryRobotRemote.uvprojx
-Project File Date:  03/03/2022
+C:\Users\Yee\OneDrive\Pix Project\Watchdog for Espana Planck\Redundant Watchdog\MDK-ARM\DeliveryRobotRemote.uvprojx
+Project File Date:  03/08/2022
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 7 (build 960)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
@@ -49,11 +49,23 @@ Custom: C:\Keil_v5\ARM\Bin\FCARM.exe @.\Auto_FcArm_Cmd.inp
 FCARM FILE CONVERTER V2.58
 Completed 14 File(s), Ratio 87%
 compiling web.c...
+compiling can.c...
+compiling brake.c...
+compiling app_main.c...
+..\Src\app_main.c(53): warning:  #167-D: argument of type "void (*)(const void *)" is incompatible with parameter of type "osThreadFunc_t"
+  	osThreadId_t osThIdCan1 = osThreadNew(app_can1, NULL, NULL);
+..\Src\app_main.c(54): warning:  #167-D: argument of type "void (*)(const void *)" is incompatible with parameter of type "osThreadFunc_t"
+  	osThreadId_t osThIdCan2 = osThreadNew(app_can2, NULL, NULL);
+..\Src\app_main.c(108): warning:  #550-D: variable "status"  was set but never used
+  	netStatus status;
+..\Src\app_main.c(32): warning:  #177-D: variable "UPDATE_FLAG"  was declared but never referenced
+  static const uint32_t UPDATE_FLAG = 0x55555555U;
+..\Src\app_main.c: 4 warnings, 0 errors
 linking...
-Program Size: Code=53044 RO-data=28816 RW-data=101956 ZI-data=28132  
+Program Size: Code=53876 RO-data=28816 RW-data=101956 ZI-data=28132  
 FromELF: creating hex file...
-After Build - User command #1: C:\Keil_v5\\ARM\ARMCC\bin\fromelf.exe  --bin -o "c:\Users\Yee\OneDrive\Pix Project\Watchdog for Espana Planck\Redundant Watchdog\MDK-ARM\DeliveryRobotVCU\Redundant Watchdog.bin" ".\DeliveryRobotVCU\Redundant Watchdog.axf"
-".\DeliveryRobotVCU\Redundant Watchdog.axf" - 0 Error(s), 0 Warning(s).
+After Build - User command #1: C:\Keil_v5\\ARM\ARMCC\bin\fromelf.exe  --bin -o "C:\Users\Yee\OneDrive\Pix Project\Watchdog for Espana Planck\Redundant Watchdog\MDK-ARM\DeliveryRobotVCU\Redundant Watchdog.bin" ".\DeliveryRobotVCU\Redundant Watchdog.axf"
+".\DeliveryRobotVCU\Redundant Watchdog.axf" - 0 Error(s), 4 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -158,25 +170,25 @@ Package Vendor: Keil
    * Component: ARM::CMSIS:CORE:5.5.0
 
    * Component: ARM::CMSIS:RTOS2:Keil RTX5:Library:5.5.3
-      Source file:   CMSIS\RTOS2\RTX\Template\Events.c
-      Library file:  CMSIS\RTOS2\RTX\Library\ARM\RTX_CM4F.lib
-      Source file:   CMSIS\RTOS2\RTX\Template\Thread.c
-      Source file:   CMSIS\RTOS2\RTX\Template\MsgQueue.c
       Source file:   CMSIS\RTOS2\RTX\Template\main.c
-      Source file:   CMSIS\RTOS2\RTX\Template\Semaphore.c
+      Source file:   CMSIS\RTOS2\RTX\Template\Events.c
+      Source file:   CMSIS\RTOS2\RTX\Template\MsgQueue.c
       Source file:   CMSIS\RTOS2\RTX\Template\Timer.c
-      Source file:   CMSIS\RTOS2\RTX\Template\svc_user.c
-      Source file:   CMSIS\RTOS2\RTX\Template\MemPool.c
-      Include file:  CMSIS\RTOS2\RTX\Include\rtx_os.h
-      Source file:   CMSIS\RTOS2\RTX\Source\rtx_lib.c
-      Source file:   CMSIS\RTOS2\RTX\Config\RTX_Config.c
-      Include file:  CMSIS\RTOS2\RTX\Config\RTX_Config.h
       Source file:   CMSIS\RTOS2\RTX\Template\Mutex.c
+      Source file:   CMSIS\RTOS2\RTX\Template\Semaphore.c
+      Source file:   CMSIS\RTOS2\RTX\Template\svc_user.c
+      Include file:  CMSIS\RTOS2\RTX\Include\rtx_os.h
+      Include file:  CMSIS\RTOS2\RTX\Config\RTX_Config.h
+      Source file:   CMSIS\RTOS2\RTX\Source\rtx_lib.c
+      Source file:   CMSIS\RTOS2\RTX\Template\Thread.c
+      Library file:  CMSIS\RTOS2\RTX\Library\ARM\RTX_CM4F.lib
+      Source file:   CMSIS\RTOS2\RTX\Template\MemPool.c
+      Source file:   CMSIS\RTOS2\RTX\Config\RTX_Config.c
 
    * Component: Keil.ARM Compiler::Compiler:Event Recorder:DAP:1.4.0
-      Include file:  Config\EventRecorderConf.h
-      Include file:  Include\EventRecorder.h
       Source file:   Source\EventRecorder.c
+      Include file:  Include\EventRecorder.h
+      Include file:  Config\EventRecorderConf.h
 
    * Component: Keil.MDK-Plus::Network:CORE:IPv4 Release:7.15.0
       Include file:  Network\Include\rl_net.h
@@ -187,20 +199,20 @@ Package Vendor: Keil
       Include file:  Network\Config\Net_Config_ETH.h
 
    * Component: Keil.MDK-Plus::Network:Service:Web Server Compact:HTTP:7.15.0
-      Source file:   Network\Template\HTTP_Server_Multiuser.c
       Source file:   Network\Template\HTTP_Server_CGI.c
-      Source file:   Network\Template\HTTP_Server_Error.c
-      Include file:  Network\Config\Net_Config_HTTP_Server.h
       Source file:   Network\Template\HTTP_Server_Access.c
+      Source file:   Network\Template\HTTP_Server_Multiuser.c
+      Include file:  Network\Config\Net_Config_HTTP_Server.h
+      Source file:   Network\Template\HTTP_Server_Error.c
 
    * Component: Keil.MDK-Plus::Network:Socket:TCP:7.15.0
       Source file:   Network\Template\TCP_Socket_Server.c
-      Include file:  Network\Config\Net_Config_TCP.h
       Source file:   Network\Template\TCP_Socket_Client.c
+      Include file:  Network\Config\Net_Config_TCP.h
 
    * Component: Keil.MDK-Plus::Network:Socket:UDP:7.15.0
-      Include file:  Network\Config\Net_Config_UDP.h
       Source file:   Network\Template\UDP_Socket.c
+      Include file:  Network\Config\Net_Config_UDP.h
 
    * Component: Keil::CMSIS Driver:Ethernet MAC:2.9
       Source file:   CMSIS\Driver\EMAC_STM32F4xx.c
@@ -209,10 +221,10 @@ Package Vendor: Keil
       Source file:   ETH\PHY_DP83848C.c
 
    * Component: Keil::Device:STM32Cube Framework:STM32CubeMX:1.1.0
-      Source file:   STCubeGenerated\Src\stm32f4xx_hal_msp.c
-      Source file:   STCubeGenerated\Src\stm32f4xx_hal_timebase_tim.c
       Include file:  MX_Device.h
+      Source file:   STCubeGenerated\Src\stm32f4xx_hal_timebase_tim.c
       Include file:  STCubeGenerated\Inc\stm32f4xx_hal_conf.h
+      Source file:   STCubeGenerated\Src\stm32f4xx_hal_msp.c
 
    * Component: Keil::Device:STM32Cube HAL:CAN:1.7.9
       Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_can.c
@@ -228,8 +240,8 @@ Package Vendor: Keil
       Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_cortex.c
 
    * Component: Keil::Device:STM32Cube HAL:DMA:1.7.9
-      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_dma_ex.c
       Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_dma.c
+      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_dma_ex.c
 
    * Component: Keil::Device:STM32Cube HAL:ETH:1.7.9
       Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_eth.c
@@ -245,12 +257,12 @@ Package Vendor: Keil
       Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_iwdg.c
 
    * Component: Keil::Device:STM32Cube HAL:PWR:1.7.9
-      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pwr_ex.c
       Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pwr.c
+      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pwr_ex.c
 
    * Component: Keil::Device:STM32Cube HAL:RCC:1.7.9
-      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc_ex.c
       Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc.c
+      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc_ex.c
 
    * Component: Keil::Device:STM32Cube HAL:SPI:1.7.9
       Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_spi.c
@@ -284,11 +296,11 @@ Package Vendor: Keil
 
    * Component: Keil::Device:Startup:2.6.3
       Source file:   MDK\Device\Source\ARM\STM32F40xxx_41xxx_OPT.s
-      Source file:   MDK\Device\Source\ARM\STM32F4xx_OTP.s
       Include file:  Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h
       Source file:   Drivers\CMSIS\Device\ST\STM32F4xx\Source\Templates\arm\startup_stm32f407xx.s
+      Source file:   MDK\Device\Source\ARM\STM32F4xx_OTP.s
       Source file:   Drivers\CMSIS\Device\ST\STM32F4xx\Source\Templates\system_stm32f4xx.c
-Build Time Elapsed:  00:00:02
+Build Time Elapsed:  00:00:04
 </pre>
 </body>
 </html>

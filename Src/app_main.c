@@ -27,10 +27,6 @@ static void periodicTimerCallback(void *argument);
 void LoadStoredParametersAndSetupNetwork(void);
 
 /* --------------- Extern functions ----------------- */
-extern void app_can(void *arg);
-extern void app_can_send(void *arg);
-extern void app_motor(void *arg);
-extern void app_ros_interface(void *arg);
 
 /* --------------- Static variables ---------------- */
 static const uint32_t UPDATE_FLAG = 0x55555555U;
@@ -52,15 +48,13 @@ void app_main(void *arg)
 	netStatus netSatus = netInitialize();
 	// We have to initialize memory pool first, then we can use the memory allocation.
 	InitMemoryPool();
-
     LoadStoredParametersAndSetupNetwork();
 	InitUdp();
-
-	osThreadId_t osThIdCanSend = osThreadNew(app_can_send, NULL, NULL);
-	osThreadId_t osThIdCan = osThreadNew(app_can, NULL, NULL);
-
+	osThreadId_t osThIdCan1 = osThreadNew(app_can1, NULL, NULL);
+	osThreadId_t osThIdCan2 = osThreadNew(app_can2, NULL, NULL);
+	osThreadId_t osThIdCan1Send = osThreadNew(app_can1_send, NULL, NULL);
+	osThreadId_t osThIdCan2Send = osThreadNew(app_can2_send, NULL, NULL);
 	appMainMsgQueueId = osMessageQueueNew(APP_MAIN_MSG_Q_LEN, sizeof(APP_MAIN_MSG_t), NULL);
-
 	// Create timer callbacks
 	periodicTimer = osTimerNew(periodicTimerCallback, osTimerPeriodic, NULL, NULL);
 	osTimerStart(periodicTimer, 100);
